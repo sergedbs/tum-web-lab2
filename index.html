@@ -1,14 +1,147 @@
 <!doctype html>
-<html>
+<html lang="ro">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My landing page</title>
-    <!-- CHANGE THESE VALUES -->
+    <meta name="description" content="Moments Café & Market - Mâncare artizanală, cafea proaspătă și market. La doar 10 minute de vama Leușeni-Albița pe E581." />
+    <title>Moments Café & Market - Oprirea ta perfectă pe E581</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- ADD YOUR CODE HERE -->
+    <!-- Header & Navigation -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <h1 class="logo">☕ Moments</h1>
+          <nav class="nav">
+            <a href="#about" class="nav-link">Despre Noi</a>
+            <a href="#services" class="nav-link">Servicii</a>
+            <a href="#hours" class="nav-link">Program</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2 class="hero-title">Oprirea Ta Perfectă pe E581</h2>
+          <p class="hero-subtitle">Mâncare Artizanală, Cafea Proaspătă & Market - La doar 10 minute de vama Leușeni-Albița</p>
+          <a href="#hours" class="cta-button">Vezi Programul</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title">Bine ai venit la Moments</h2>
+        <div class="about-content">
+          <p class="about-text">
+            Moments este locul ideal pentru o pauză plăcută în călătoria ta pe E581. Ne mândrim cu mâncare artizanală preparată fresh, 
+            cafea de calitate și un market bine aprovizionat pentru nevoile tale de drum.
+          </p>
+          <p class="about-text">
+            Fie că traversezi frontiera sau ești în trecere, te așteptăm cu un ambient cald, servicii rapide și produse de calitate. 
+            Suntem deschisi zilnic, gata să-ți facem călătoria mai plăcută!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="container">
+        <h2 class="section-title">Ce Oferim</h2>
+        <div class="services-grid">
+          <!-- Service Card 1: Café -->
+          <div class="service-card">
+            <div class="service-icon">☕</div>
+            <h3 class="service-title">Cafenea</h3>
+            <p class="service-description">
+              Cafea proaspătă preparată de barista dedicați. Cappuccino, espresso, latte și multe altele pentru energia ta de drum.
+            </p>
+          </div>
+          
+          <!-- Service Card 2: Artisanal Food -->
+          <div class="service-card">
+            <div class="service-icon">🥙</div>
+            <h3 class="service-title">Mâncare Artizanală</h3>
+            <p class="service-description">
+              Preparate fresh din ingrediente de calitate. Sandvișuri, salate, deserturi și feluri calde pregătite cu grijă.
+            </p>
+          </div>
+          
+          <!-- Service Card 3: Market -->
+          <div class="service-card">
+            <div class="service-icon">🛒</div>
+            <h3 class="service-title">Market</h3>
+            <p class="service-description">
+              Produse esențiale pentru drum: snacks, băuturi, produse de igienă și tot ce ai nevoie în călătorie.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hours & Location Section -->
+    <section class="hours" id="hours">
+      <div class="container">
+        <h2 class="section-title">Program & Locație</h2>
+        <div class="hours-content">
+          <div class="hours-box">
+            <h3 class="hours-subtitle">☕ Cafenea</h3>
+            <p class="hours-time">Luni - Joi: 07:00 - 22:00</p>
+            <p class="hours-time">Vineri - Duminică: 07:00 - 23:00</p>
+          </div>
+          
+          <div class="hours-box">
+            <h3 class="hours-subtitle">🛒 Market</h3>
+            <p class="hours-time">Zilnic: 07:00 - 22:00</p>
+          </div>
+          
+          <div class="location-box">
+            <h3 class="hours-subtitle">📍 Unde ne găsești</h3>
+            <p class="location-text">
+              La doar 10 minute de vama E581 Leușeni - Albița<br>
+              Oprire ușoară pentru călătorii pe drum internațional
+            </p>
+            <a href="tel:+37369151500" class="cta-button secondary">Sună-ne: 0691 51 500</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <h3 class="footer-title">☕ Moments Café & Market</h3>
+            <p class="footer-tagline">Oprirea ta perfectă pe E581</p>
+          </div>
+          
+          <div class="footer-contact">
+            <h4 class="footer-heading">Contact</h4>
+            <p class="footer-info">📞 <a href="tel:+37369151500">0691 51 500</a></p>
+            <div class="footer-social">
+              <a href="https://www.instagram.com/moments.cafe.market/" target="_blank" rel="noopener noreferrer" class="social-link">
+                📷 Instagram
+              </a>
+              <a href="https://www.facebook.com/moments.cafe.market/" target="_blank" rel="noopener noreferrer" class="social-link">
+                📘 Facebook
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p>&copy; 2026 Moments Café & Market. Toate drepturile rezervate.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
