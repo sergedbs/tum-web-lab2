@@ -251,3 +251,110 @@ a:hover {
 .nav-link:hover::after {
   width: 80%;
 }
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--spacing-2xl) 0;
+  overflow: hidden;
+}
+
+/* Decorative pattern overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 255, 255, 0.03) 35px, rgba(255, 255, 255, 0.03) 70px);
+  pointer-events: none;
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: var(--spacing-xl);
+}
+
+/* Hero Title */
+.hero-title {
+  font-size: var(--font-size-4xl);
+  color: var(--color-text-white);
+  margin-bottom: var(--spacing-md);
+  line-height: var(--line-height-tight);
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.5px;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+  font-size: var(--font-size-large);
+  color: var(--color-secondary-light);
+  margin-bottom: var(--spacing-xl);
+  line-height: var(--line-height-relaxed);
+  font-weight: 400;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-text-white);
+  font-size: var(--font-size-large);
+  font-weight: 600;
+  padding: var(--spacing-sm) var(--spacing-xl);
+  border-radius: var(--border-radius-full);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 140, 66, 0.4);
+  border: 2px solid transparent;
+  cursor: pointer;
+  min-height: 48px;
+  min-width: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-button:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 140, 66, 0.5);
+  color: var(--color-text-white);
+}
+
+.cta-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(255, 140, 66, 0.4);
+}
+
+/* Secondary CTA Button variant */
+.cta-button.secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: none;
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-text-white);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
+}
