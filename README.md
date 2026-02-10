@@ -1,24 +1,72 @@
-# Lab 2 - Landing page
+# Moments Café & Market - Landing Page
 
-Create a web page for your/friends/relatives business (example: car-rent, cookies-shop, crypto-scam)
+A professional, mobile-first landing page for **Moments Café & Market**, a real business located 10 minutes from the E581 Leușeni-Albița border crossing. This project creates a traveler-friendly web presence to attract international road travelers with artisanal food, premium coffee, and a full-service market.
 
-> For a maximal grade, the website should be for a real client (your/friends/relatives business), otherwise -1-2 points
+## Live Demo
 
-## Customer requirements
+**[View Live Site](https://sergedbs.github.io/tum-web-lab2/)**
 
-- Some form of navigation to sections (links, buttons)
-- Call to action
-- At least 4 sections ([see examples](https://webflow.com/blog/high-converting-landing-page))
-- Pleasant to the eyes
+## Screenshots
 
-## Dev requirements
+### Desktop View
 
-- Use vanilla CSS and HTML (no frameworks)
-- Have a decent git history (no one commit)
-- The page should be deployed on a free hosting service (example: GitHub Pages, Vercel, Netlify)
-- Project repo should have a README with a short description of the landing page topic, screenshots, and a link to the live demo
+![Desktop View](https://i.imgur.com/1y8hf4u.jpeg)
 
-## Other requirements:
+### Mobile View
 
-- For potential maximal mark, a WIP version should be submitted during the class
-- Use index.html, reset.css
+![Mobile View](https://i.imgur.com/XjfBmC5.png)
+
+## Project Features
+
+### Design & UX
+
+- **Mobile-First Approach** - Optimized for travelers on smartphones
+- **Responsive Design** - Seamless experience across all devices (320px to 1440px+)
+- **Strategic Layout** - 5 key sections designed for quick traveler decision-making
+- **High-Quality Icons** - Font Awesome 6 icons for professional appearance
+- **Background Imagery** - Custom café photography for authentic brand feeling
+
+### Technical Implementation
+
+- **Semantic HTML5** - Proper structure and accessibility
+- **Custom CSS Variables** - Consistent color scheme (coffee browns, cream/beige, orange accents)
+- **CSS Grid & Flexbox** - Modern layout systems
+- **Smooth Animations** - Fade-in effects, hover transitions, and micro-interactions
+- **Sticky Navigation** - Always-accessible menu for easy navigation
+
+## Technologies Used
+
+- HTML5
+- CSS3 (Custom Properties, Grid, Flexbox, Animations)
+- Font Awesome 6 (Icons)
+- Bootstrap 5.3 (Baseline styles only)
+- Google Maps Embed API
+
+## Project Structure
+
+```txt
+tum-web-lab2/
+├── index.html              # Main landing page
+├── css/
+│   ├── reset.css           # Meyer's CSS Reset
+│   └── style.css           # Custom styles (~1000 lines)
+├── images/
+│   ├── background.jpg      # Hero background
+│   └── moments-logo.jpg    # Business logo
+└── README.md               # Project documentation
+```
+
+## Color Scheme
+
+- **Primary (Coffee Brown)**: `#6F4E37`
+- **Secondary (Cream/Beige)**: `#F5F5DC`, `#FFFEF0`
+- **Accent (Orange)**: `#FF8C42`
+- **Text**: Dark brown (`#2C1810`) for excellent readability
+
+## Responsive Breakpoints
+
+- **Mobile Small**: 320px - 480px
+- **Mobile Large**: 481px - 768px
+- **Tablet**: 769px - 1024px  
+- **Desktop**: 1025px+
+- **Large Desktop**: 1440px+
