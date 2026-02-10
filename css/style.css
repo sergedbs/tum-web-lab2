@@ -329,24 +329,12 @@ a:hover {
   overflow: hidden;
 }
 
-/* Decorative pattern overlay */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 255, 255, 0.03) 35px, rgba(255, 255, 255, 0.03) 70px);
-  pointer-events: none;
-}
-
 .hero-content {
   text-align: center;
   position: relative;
   z-index: 1;
   max-width: 800px;
+  margin: 0 auto;
   padding: var(--spacing-xl);
   animation: fadeInUp 1s ease-out;
 }
@@ -562,10 +550,12 @@ a:hover {
   display: block;
   line-height: 1;
   transition: transform 0.3s ease;
+  color: var(--color-accent);
 }
 
 .service-card:hover .service-icon {
   transform: scale(1.1) rotate(5deg);
+  color: var(--color-accent-dark);
 }
 
 .service-title {
@@ -629,6 +619,11 @@ a:hover {
   font-size: var(--font-size-xl);
 }
 
+.hours-subtitle i {
+  color: var(--color-accent);
+  margin-right: var(--spacing-xs);
+}
+
 .hours-time {
   color: var(--color-text-primary);
   font-size: var(--font-size-large);
@@ -643,10 +638,17 @@ a:hover {
 
 .location-box {
   border-left-color: var(--color-primary);
+}
+
+.location-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.map-container {
+  margin: var(--spacing-lg) 0;
 }
 
 .location-text {
@@ -682,6 +684,11 @@ a:hover {
   margin-bottom: var(--spacing-xs);
 }
 
+.footer-title i {
+  color: var(--color-accent-light);
+  margin-right: var(--spacing-xs);
+}
+
 .footer-tagline {
   color: var(--color-secondary-light);
   font-size: var(--font-size-medium);
@@ -705,6 +712,11 @@ a:hover {
   font-size: var(--font-size-medium);
 }
 
+.footer-info i {
+  color: var(--color-accent-light);
+  margin-right: var(--spacing-xs);
+}
+
 .footer-info a {
   color: var(--color-secondary-light);
   transition: color 0.3s ease;
@@ -725,11 +737,23 @@ a:hover {
   font-size: var(--font-size-medium);
   transition: all 0.3s ease;
   padding: var(--spacing-xs) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.social-link i {
+  font-size: var(--font-size-large);
+  transition: transform 0.3s ease;
 }
 
 .social-link:hover {
   color: var(--color-accent-light);
   transform: translateX(4px);
+}
+
+.social-link:hover i {
+  transform: scale(1.2);
 }
 
 .footer-bottom {
@@ -960,10 +984,28 @@ a:hover {
   
   .location-box {
     grid-column: 1 / -1;
-    max-width: 800px;
-    margin: 0 auto;
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xl);
+    align-items: flex-start;
+    text-align: left;
     padding: calc(var(--spacing-xl) + var(--spacing-sm));
+  }
+  
+  .location-info {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .map-container {
+    flex: 1;
+    margin: 0;
+  }
+  
+  .map-container iframe {
+    height: 100%;
+    min-height: 350px;
   }
   
   .location-text {
