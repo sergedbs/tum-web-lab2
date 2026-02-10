@@ -160,6 +160,64 @@ a:hover {
   text-align: center;
   margin-bottom: var(--spacing-lg);
   color: var(--color-primary-dark);
+  position: relative;
+  padding-bottom: var(--spacing-md);
+}
+
+/* Decorative underline for section titles */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  border-radius: var(--border-radius-full);
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
 /* ===================================
@@ -285,6 +343,7 @@ a:hover {
   z-index: 1;
   max-width: 800px;
   padding: var(--spacing-xl);
+  animation: fadeInUp 1s ease-out;
 }
 
 /* Hero Title */
@@ -330,6 +389,26 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cta-button:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .cta-button:hover {
@@ -365,6 +444,18 @@ a:hover {
 .about {
   padding: var(--spacing-2xl) 0;
   background-color: var(--color-bg-light);
+  position: relative;
+}
+
+/* Subtle decorative element */
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-accent-light), transparent);
 }
 
 .about-content {
@@ -390,6 +481,29 @@ a:hover {
 .services {
   padding: var(--spacing-2xl) 0;
   background-color: var(--color-bg-medium);
+  position: relative;
+}
+
+/* Decorative corner elements */
+.services::before,
+.services::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  opacity: 0.05;
+}
+
+.services::before {
+  top: var(--spacing-xl);
+  left: var(--spacing-xl);
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+}
+
+.services::after {
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
 }
 
 .services-grid {
@@ -406,8 +520,29 @@ a:hover {
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle shine effect on hover */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s;
+  opacity: 0;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+  transform: rotate(45deg) translate(50%, 50%);
 }
 
 .service-card:hover {
@@ -421,6 +556,11 @@ a:hover {
   margin-bottom: var(--spacing-md);
   display: block;
   line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .service-title {
@@ -441,6 +581,18 @@ a:hover {
 .hours {
   padding: var(--spacing-2xl) 0;
   background-color: var(--color-bg-light);
+  position: relative;
+}
+
+/* Top border decoration */
+.hours::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
 }
 
 .hours-content {
@@ -457,6 +609,13 @@ a:hover {
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-sm);
   border-left: 4px solid var(--color-accent);
+  transition: all 0.3s ease;
+}
+
+.hours-box:hover,
+.location-box:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
 }
 
 .hours-subtitle {
