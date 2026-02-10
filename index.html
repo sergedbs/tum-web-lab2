@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Moments Café & Market - Mâncare artizanală, cafea proaspătă și market. La doar 10 minute de vama Leușeni-Albița pe E581." />
     <title>Moments Café & Market - Oprirea ta perfectă pe E581</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- Header & Navigation -->
     <header class="header">
       <div class="container">
         <div class="header-content">
-          <h1 class="logo">☕ Moments</h1>
+          <h1 class="logo"><img src="images/moments-logo.jpg" alt="Moments Café & Market Logo" style="height: 50px; vertical-align: middle; margin-right: 10px;">Moments</h1>
           <nav class="nav">
             <a href="#about" class="nav-link">Despre Noi</a>
             <a href="#services" class="nav-link">Servicii</a>
@@ -29,8 +30,8 @@
       <div class="container">
         <div class="hero-content">
           <h2 class="hero-title">Oprirea Ta Perfectă pe E581</h2>
-          <p class="hero-subtitle">Mâncare Artizanală, Cafea Proaspătă & Market - La doar 10 minute de vama Leușeni-Albița</p>
-          <a href="#hours" class="cta-button">Vezi Programul</a>
+          <p class="hero-subtitle">Cafea proaspătă, mâncare artizanală și provizii de drum - la doar 10 minute de vama Leușeni-Albița. Oprire rapidă, experiență memorabilă!</p>
+          <a href="#hours" class="cta-button">Planifică Vizita</a>
         </div>
       </div>
     </section>
@@ -38,15 +39,15 @@
     <!-- About Section -->
     <section class="about" id="about">
       <div class="container">
-        <h2 class="section-title">Bine ai venit la Moments</h2>
+        <h2 class="section-title">De Ce Să Alegi Moments?</h2>
         <div class="about-content">
           <p class="about-text">
-            Moments este locul ideal pentru o pauză plăcută în călătoria ta pe E581. Ne mândrim cu mâncare artizanală preparată fresh, 
-            cafea de calitate și un market bine aprovizionat pentru nevoile tale de drum.
+            <strong>Locația perfectă:</strong> La doar 10 minute de vamă, Moments este oaza ta de răgaz pe drumul internațional E581. 
+            Fără devieri complicate - oprire directă, sigură și rapidă pentru toți călătorii.
           </p>
           <p class="about-text">
-            Fie că traversezi frontiera sau ești în trecere, te așteptăm cu un ambient cald, servicii rapide și produse de calitate. 
-            Suntem deschisi zilnic, gata să-ți facem călătoria mai plăcută!
+            <strong>Calitate garantată:</strong> Mâncare pregătită zilnic din ingrediente proaspete, cafea premium de la barista profesioniști 
+            și un market cu tot ce-ți trebuie în călătorie. Servire rapidă, prețuri corecte, atmosferă primitoare!
           </p>
         </div>
       </div>
@@ -60,27 +61,30 @@
           <!-- Service Card 1: Café -->
           <div class="service-card">
             <div class="service-icon">☕</div>
-            <h3 class="service-title">Cafenea</h3>
+            <h3 class="service-title">Cafea Premium</h3>
             <p class="service-description">
-              Cafea proaspătă preparată de barista dedicați. Cappuccino, espresso, latte și multe altele pentru energia ta de drum.
+              Trezește-te cu aroma unei cafele autentice! Cappuccino, espresso, latte pregătite de barista profesioniști. 
+              Cafea la drum nu înseamnă compromis de calitate.
             </p>
           </div>
           
           <!-- Service Card 2: Artisanal Food -->
           <div class="service-card">
             <div class="service-icon">🥙</div>
-            <h3 class="service-title">Mâncare Artizanală</h3>
+            <h3 class="service-title">Mâncare Proaspătă</h3>
             <p class="service-description">
-              Preparate fresh din ingrediente de calitate. Sandvișuri, salate, deserturi și feluri calde pregătite cu grijă.
+              Uită de fast-food! Sandvișuri artizanale, salate fresh, feluri calde și deserturi preparate zilnic. 
+              Masa ta merită ingrediente de calitate, chiar și în drum.
             </p>
           </div>
           
           <!-- Service Card 3: Market -->
           <div class="service-card">
             <div class="service-icon">🛒</div>
-            <h3 class="service-title">Market</h3>
+            <h3 class="service-title">Market Complet</h3>
             <p class="service-description">
-              Produse esențiale pentru drum: snacks, băuturi, produse de igienă și tot ce ai nevoie în călătorie.
+              Ai uitat ceva acasă? Nu-i problemă! Snacks, băuturi răcoritoare, produse de igienă și provizii pentru 
+              drum - totul într-un singur loc, fără timp pierdut.
             </p>
           </div>
         </div>
@@ -104,12 +108,15 @@
           </div>
           
           <div class="location-box">
-            <h3 class="hours-subtitle">📍 Unde ne găsești</h3>
+            <h3 class="hours-subtitle">📍 Locația Perfectă</h3>
             <p class="location-text">
-              La doar 10 minute de vama E581 Leușeni - Albița<br>
-              Oprire ușoară pentru călătorii pe drum internațional
+              <strong>E581, la 10 minute de vama Leușeni - Albița</strong><br>
+              Acces facil, parcare sigură, fără deviere din drum. Oprire ideală înainte sau după vamă!
             </p>
-            <a href="tel:+37369151500" class="cta-button secondary">Sună-ne: 0691 51 500</a>
+            <div class="map-container" style="margin: 20px 0;">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2728.663067151469!2d28.208423936565193!3d46.85032229999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ca3b978f425f43%3A0xfeef728335faaa9e!2sMoments!5e0!3m2!1sen!2s!4v1770726154478!5m2!1sen!2s" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <a href="tel:+37369151500" class="cta-button secondary">Sună Acum: 0691 51 500</a>
           </div>
         </div>
       </div>
