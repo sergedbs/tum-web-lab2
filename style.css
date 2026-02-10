@@ -445,7 +445,7 @@ a:hover {
 
 .hours-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
 }
@@ -479,13 +479,17 @@ a:hover {
 
 .location-box {
   border-left-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .location-text {
   color: var(--color-text-secondary);
   font-size: var(--font-size-medium);
   line-height: var(--line-height-relaxed);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 }
 
 /* ===================================
@@ -570,4 +574,308 @@ a:hover {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--color-secondary-dark);
   font-size: var(--font-size-small);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   =================================== */
+
+/* Mobile Small (320px - 480px) */
+@media screen and (max-width: 480px) {
+  /* Typography adjustments for small screens */
+  :root {
+    --font-size-4xl: 2rem; /* 32px instead of 48px */
+    --font-size-3xl: 1.75rem; /* 28px instead of 40px */
+    --font-size-2xl: 1.5rem; /* 24px instead of 32px */
+    --font-size-xl: 1.25rem; /* 20px instead of 24px */
+  }
+  
+  /* Header adjustments */
+  .header-content {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) 0;
+  }
+  
+  .logo {
+    font-size: var(--font-size-large);
+  }
+  
+  /* Navigation - stack vertically on very small screens */
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xs);
+  }
+  
+  .nav-link {
+    font-size: var(--font-size-small);
+    padding: var(--spacing-xs);
+  }
+  
+  /* Hero section */
+  .hero {
+    min-height: 70vh;
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .hero-content {
+    padding: var(--spacing-md);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-medium);
+  }
+  
+  .cta-button {
+    font-size: var(--font-size-medium);
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+  
+  /* Service cards - ensure single column */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  /* Hours content - single column */
+  .hours-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  /* Footer - single column */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+  
+  .footer-brand,
+  .footer-contact {
+    text-align: center;
+  }
+  
+  .footer-social {
+    align-items: center;
+  }
+}
+
+/* Mobile Medium to Large (481px - 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* Typography adjustments */
+  :root {
+    --font-size-4xl: 2.5rem; /* 40px */
+    --font-size-3xl: 2rem; /* 32px */
+  }
+  
+  /* Header - keep horizontal but compact */
+  .nav {
+    gap: var(--spacing-sm);
+  }
+  
+  .nav-link {
+    font-size: var(--font-size-small);
+  }
+  
+  /* Hero adjustments */
+  .hero {
+    min-height: 75vh;
+  }
+  
+  /* Services - allow 2 columns on larger phones/small tablets */
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  /* Hours - 2 columns with location spanning full width */
+  .hours-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .location-box {
+    grid-column: 1 / -1;
+  }
+  
+  /* Footer - can stay single column for clarity */
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer-brand,
+  .footer-contact {
+    text-align: center;
+  }
+  
+  .footer-social {
+    align-items: center;
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Container slight adjustment */
+  .container {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+  
+  /* Navigation fully horizontal */
+  .nav {
+    gap: var(--spacing-md);
+  }
+  
+  /* Services grid - 3 columns start to appear */
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  /* Hours - 2 columns with location box spanning full width */
+  .hours-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .location-box {
+    grid-column: 1 / -1;
+  }
+  
+  /* Footer - 2 columns on tablet */
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (1025px and above) */
+@media screen and (min-width: 1025px) {
+  /* Enhanced spacing for larger screens */
+  .about,
+  .services,
+  .hours {
+    padding: var(--spacing-2xl) 0 calc(var(--spacing-2xl) + var(--spacing-lg));
+  }
+  
+  /* Hero - more dramatic on large screens */
+  .hero {
+    min-height: 90vh;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem; /* 56px */
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-xl);
+  }
+  
+  /* Navigation with more spacing */
+  .nav {
+    gap: var(--spacing-lg);
+  }
+  
+  .nav-link {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-large);
+  }
+  
+  /* Service cards - solid 3 column layout */
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-12px);
+  }
+  
+  /* Hours layout - 2 columns for hours, location below spanning full */
+  .hours-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+  
+  .location-box {
+    grid-column: 1 / -1;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: calc(var(--spacing-xl) + var(--spacing-sm));
+  }
+  
+  .location-text {
+    font-size: var(--font-size-large);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  /* Footer - comfortable 2 column */
+  .footer-content {
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--spacing-2xl);
+  }
+}
+
+/* Large Desktop (1440px and above) */
+@media screen and (min-width: 1440px) {
+  /* Increase base font size slightly for readability */
+  :root {
+    --font-size-base: 18px;
+  }
+  
+  /* Hero even more prominent */
+  .hero-title {
+    font-size: 4rem; /* 64px */
+  }
+  
+  /* Increase card padding */
+  .service-card {
+    padding: calc(var(--spacing-xl) + var(--spacing-md));
+  }
+  
+  .hours-box,
+  .location-box {
+    padding: calc(var(--spacing-xl) + var(--spacing-md));
+  }
+}
+
+/* Landscape orientation adjustments for mobile/tablet */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  /* Reduce hero height in landscape mode */
+  .hero {
+    min-height: auto;
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-medium);
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* Print styles (bonus - makes the page print-friendly) */
+@media print {
+  .header {
+    position: static;
+  }
+  
+  .hero {
+    min-height: auto;
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+  
+  .cta-button,
+  .service-card,
+  .hours-box,
+  .location-box {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
 }
