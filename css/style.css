@@ -8,9 +8,9 @@
   --color-primary-light: #8B6F47; /* Light brown */
   
   /* Secondary Colors - Cream/Beige */
-  --color-secondary: #F5F5DC; /* Beige */
-  --color-secondary-light: #FFFEF0; /* Cream */
-  --color-secondary-dark: #E8E3D3; /* Darker beige */
+  --color-secondary: #F5EAD7; /* Warm beige */
+  --color-secondary-light: #FFF8F0; /* Warm cream */
+  --color-secondary-dark: #E8D5C0; /* Warm darker beige */
   
   /* Accent Colors - Orange/Amber */
   --color-accent: #FF8C42; /* Warm orange */
@@ -24,9 +24,9 @@
   --color-text-white: #FFFFFF;
   
   /* Background Colors */
-  --color-bg-light: #FFFEF0;
-  --color-bg-medium: #F5F5DC;
-  --color-bg-dark: #E8E3D3;
+  --color-bg-light: #FFF8F0;
+  --color-bg-medium: #F5EAD7;
+  --color-bg-dark: #E8D5C0;
   
   /* Typography */
   --font-family-heading: 'Georgia', 'Times New Roman', serif;
@@ -69,6 +69,28 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================
+   SCROLL PROGRESS BAR (mobile-only)
+   =================================== */
+.scroll-progress {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .scroll-progress {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent), var(--color-accent-light));
+    z-index: 9998;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+  }
 }
 
 /* ===================================
