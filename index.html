@@ -15,7 +15,7 @@
     <!-- Header & Navigation -->
     <header class="header">
       <div class="container">
-        <div class="header-content">
+        <div class="d-flex justify-content-between align-items-center py-2">
           <h1 class="logo"><a href="#hero"><img src="images/moments-logo.jpg" alt="Moments Café & Market Logo" style="height: 60px; width: 60px; border-radius: 50%; object-fit: cover;"></a></h1>
           <nav class="nav">
             <a href="#about" class="nav-link">Despre Noi</a>
@@ -59,35 +59,41 @@
     <section class="services" id="services">
       <div class="container">
         <h2 class="section-title">Ce Oferim</h2>
-        <div class="services-grid">
+        <div class="row g-4 mt-2">
           <!-- Service Card 1: Café -->
-          <div class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-mug-hot"></i></div>
-            <h3 class="service-title">Cafea Premium</h3>
-            <p class="service-description">
-              Trezește-te cu aroma unei cafele autentice! Cappuccino, espresso, latte pregătite de barista profesioniști. 
-              Cafea la drum nu înseamnă compromis de calitate.
-            </p>
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-mug-hot"></i></div>
+              <h3 class="service-title">Cafea Premium</h3>
+              <p class="service-description">
+                Trezește-te cu aroma unei cafele autentice! Cappuccino, espresso, latte pregătite de barista profesioniști. 
+                Cafea la drum nu înseamnă compromis de calitate.
+              </p>
+            </div>
           </div>
           
           <!-- Service Card 2: Artisanal Food -->
-          <div class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-utensils"></i></div>
-            <h3 class="service-title">Mâncare Proaspătă</h3>
-            <p class="service-description">
-              Uită de fast-food! Sandvișuri artizanale, salate fresh, feluri calde și deserturi preparate zilnic. 
-              Masa ta merită ingrediente de calitate, chiar și în drum.
-            </p>
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-utensils"></i></div>
+              <h3 class="service-title">Mâncare Proaspătă</h3>
+              <p class="service-description">
+                Uită de fast-food! Sandvișuri artizanale, salate fresh, feluri calde și deserturi preparate zilnic. 
+                Masa ta merită ingrediente de calitate, chiar și în drum.
+              </p>
+            </div>
           </div>
           
           <!-- Service Card 3: Market -->
-          <div class="service-card">
-            <div class="service-icon"><i class="fa-solid fa-cart-shopping"></i></div>
-            <h3 class="service-title">Market Complet</h3>
-            <p class="service-description">
-              Ai uitat ceva acasă? Nu-i problemă! Snacks, băuturi răcoritoare, produse de igienă și provizii pentru 
-              drum - totul într-un singur loc, fără timp pierdut.
-            </p>
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+              <h3 class="service-title">Market Complet</h3>
+              <p class="service-description">
+                Ai uitat ceva acasă? Nu-i problemă! Snacks, băuturi răcoritoare, produse de igienă și provizii pentru 
+                drum - totul într-un singur loc, fără timp pierdut.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -97,29 +103,37 @@
     <section class="hours" id="hours">
       <div class="container">
         <h2 class="section-title">Program & Locație</h2>
-        <div class="hours-content">
-          <div class="hours-box">
-            <h3 class="hours-subtitle"><i class="fa-solid fa-mug-hot"></i> Cafenea</h3>
-            <p class="hours-time">Luni - Joi: 07:00 - 22:00</p>
-            <p class="hours-time">Vineri - Duminică: 07:00 - 23:00</p>
-          </div>
-          
-          <div class="hours-box">
-            <h3 class="hours-subtitle"><i class="fa-solid fa-cart-shopping"></i> Market</h3>
-            <p class="hours-time">Zilnic: 07:00 - 22:00</p>
-          </div>
-          
-          <div class="location-box">
-            <div class="location-info">
-              <h3 class="hours-subtitle"><i class="fa-solid fa-location-dot"></i> Locația Perfectă</h3>
-              <p class="location-text">
-                <strong>E581, la 10 minute de vama Leușeni - Albița</strong><br>
-                Acces facil, parcare sigură, fără deviere din drum. Oprire ideală înainte sau după vamă!
-              </p>
-              <a href="tel:+37369151500" class="cta-button secondary">Sună Acum: 0691 51 500</a>
+        <div class="row g-4 mt-2">
+          <div class="col-md-6">
+            <div class="hours-box">
+              <h3 class="hours-subtitle"><i class="fa-solid fa-mug-hot"></i> Cafenea</h3>
+              <p class="hours-time">Luni - Joi: 07:00 - 22:00</p>
+              <p class="hours-time">Vineri - Duminică: 07:00 - 23:00</p>
             </div>
-            <div class="map-container">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2728.663067151469!2d28.208423936565193!3d46.85032229999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ca3b978f425f43%3A0xfeef728335faaa9e!2sMoments!5e0!3m2!1sen!2s!4v1770726154478!5m2!1sen!2s" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="hours-box">
+              <h3 class="hours-subtitle"><i class="fa-solid fa-cart-shopping"></i> Market</h3>
+              <p class="hours-time">Zilnic: 07:00 - 22:00</p>
+            </div>
+          </div>
+          
+          <div class="col-12">
+            <div class="location-box">
+              <div class="row g-4 align-items-center">
+                <div class="col-md-6 location-info">
+                  <h3 class="hours-subtitle"><i class="fa-solid fa-location-dot"></i> Locația Perfectă</h3>
+                  <p class="location-text">
+                    <strong>E581, la 10 minute de vama Leușeni - Albița</strong><br>
+                    Acces facil, parcare sigură, fără deviere din drum. Oprire ideală înainte sau după vamă!
+                  </p>
+                  <a href="tel:+37369151500" class="cta-button secondary">Sună Acum: 0691 51 500</a>
+                </div>
+                <div class="col-md-6 map-container">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2728.663067151469!2d28.208423936565193!3d46.85032229999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ca3b978f425f43%3A0xfeef728335faaa9e!2sMoments!5e0!3m2!1sen!2s!4v1770726154478!5m2!1sen!2s" width="100%" height="300" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -129,13 +143,13 @@
     <!-- Footer / Contact -->
     <footer class="footer" id="contact">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
+        <div class="row g-4 mb-4">
+          <div class="col-md-8 footer-brand">
             <h3 class="footer-title"><i class="fa-solid fa-mug-hot"></i> Moments Café & Market</h3>
             <p class="footer-tagline">Oprirea ta perfectă pe E581</p>
           </div>
           
-          <div class="footer-contact">
+          <div class="col-md-4 footer-contact">
             <h4 class="footer-heading">Contact</h4>
             <p class="footer-info"><i class="fa-solid fa-phone"></i> <a href="tel:+37369151500">0691 51 500</a></p>
             <div class="footer-social">
