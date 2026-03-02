@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import site from '../data/site.json';
-import content from '../data/content.json';
+import hero from '../data/hero.json';
+import hours from '../data/hours.json';
 import '../styles/reset.css';
 import '../styles/style.css';
 import logoUrl from '../assets/moments-logo.jpg';
@@ -12,15 +14,15 @@ interface Props {
 }
 
 const {
-  title = `${site.name} - ${content.hero.title}`,
+  title = `${site.name} - ${hero.title}`,
   description = site.description,
 } = Astro.props;
 
 const { siteUrl, phone, phoneDisplay, instagram, facebook, year, mascotMessage, mapsEmbed } = site;
 
 // Pass close hours to main.js via data attributes (CMS-editable)
-const cafeWeekday = content.hours.cafe[0];
-const cafeWeekend = content.hours.cafe[1];
+const cafeWeekday = hours.cafe[0];
+const cafeWeekend = hours.cafe[1];
 ---
 
 <!doctype html>
@@ -95,11 +97,13 @@ const cafeWeekend = content.hours.cafe[1];
     <div class="mascot" id="mascot" role="complementary" aria-label="Mascota Moments Café">
       <div class="mascot__bubble" set:html={mascotMessage.replace('—', '—<br />')}></div>
       <div class="mascot__body">
-        <img
-          src={coffeeUrl.src}
-          class="mascot__svg"
+        <Image
+          src={coffeeUrl}
           alt=""
+          class="mascot__svg"
           aria-hidden="true"
+          width={80}
+          loading="eager"
         />
       </div>
     </div>

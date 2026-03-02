@@ -1,0 +1,121 @@
+backend:
+  name: github
+  repo: sergedbs/tum-web-lab2
+  branch: master
+
+# Enables the local proxy server for development (npx decap-server)
+local_backend: true
+
+media_folder: src/assets
+public_folder: /tum-web-lab2/assets
+
+site_url: https://sergedbs.github.io/tum-web-lab2
+display_url: https://sergedbs.github.io/tum-web-lab2
+
+collections:
+  # Site-wide settings (src/data/site.json)
+  - name: settings
+    label: Settings
+    files:
+      - name: site
+        label: Site Settings
+        file: src/data/site.json
+        format: json
+        fields:
+          - { label: "Site Name",             name: name,           widget: string }
+          - { label: "Tagline",               name: tagline,        widget: string }
+          - { label: "Meta Description",      name: description,    widget: text   }
+          - { label: "Site URL",              name: siteUrl,        widget: string }
+          - { label: "Phone (E.164)",         name: phone,          widget: string }
+          - { label: "Phone (display)",       name: phoneDisplay,   widget: string }
+          - { label: "Instagram URL",         name: instagram,      widget: string }
+          - { label: "Facebook URL",          name: facebook,       widget: string }
+          - { label: "Copyright Year",        name: year,           widget: number }
+          - { label: "Mascot Message",        name: mascotMessage,  widget: string }
+          - { label: "Google Maps Embed URL", name: mapsEmbed,      widget: string }
+
+  # Page content — one file per section
+  - name: content
+    label: Content
+    files:
+      - name: hero
+        label: Hero Section
+        file: src/data/hero.json
+        format: json
+        fields:
+          - { label: "Location Badge", name: badge,    widget: string }
+          - { label: "Title",          name: title,    widget: string }
+          - { label: "Subtitle",       name: subtitle, widget: text   }
+          - { label: "CTA Label",      name: ctaLabel, widget: string }
+          - { label: "CTA Link",       name: ctaHref,  widget: string }
+
+      - name: about
+        label: About Section
+        file: src/data/about.json
+        format: json
+        fields:
+          - { label: "Section Title", name: title, widget: string }
+          - label: Paragraphs
+            name: paragraphs
+            widget: list
+            fields:
+              - { label: "Bold Label", name: label, widget: string }
+              - { label: "Text",       name: text,  widget: text   }
+
+      - name: services
+        label: Services Section
+        file: src/data/services.json
+        format: json
+        fields:
+          - { label: "Section Title", name: title, widget: string }
+          - label: Items
+            name: items
+            widget: list
+            fields:
+              - { label: "Icon (Font Awesome class)", name: icon,        widget: string }
+              - { label: "Title",                     name: title,       widget: string }
+              - { label: "Description",               name: description, widget: text   }
+
+      - name: hours
+        label: Hours & Location
+        file: src/data/hours.json
+        format: json
+        fields:
+          - { label: "Section Title", name: title, widget: string }
+          - label: "Café Hours"
+            name: cafe
+            widget: list
+            fields:
+              - { label: "Days Label",        name: days,      widget: string }
+              - { label: "Time Range",        name: time,      widget: string }
+              - { label: "Close Hour (0–23)", name: closeHour, widget: number, value_type: int }
+              - label: "Weekday Range [start, end]"
+                name: weekdayRange
+                widget: list
+                field: { label: Day, name: day, widget: number, value_type: int }
+          - label: "Market Hours"
+            name: market
+            widget: list
+            fields:
+              - { label: "Days Label", name: days, widget: string }
+              - { label: "Time Range", name: time, widget: string }
+          - label: Location
+            name: location
+            widget: object
+            fields:
+              - { label: "Box Title",       name: title,         widget: string }
+              - { label: "Address (bold)",  name: addressStrong, widget: string }
+              - { label: "Address Detail",  name: addressDetail, widget: text   }
+
+      - name: nav
+        label: Navigation Links
+        file: src/data/nav.json
+        format: json
+        fields:
+          - label: Nav Links
+            name: items
+            widget: list
+            fields:
+              - { label: "Anchor (#section)", name: href,  widget: string }
+              - { label: "FA Icon class",     name: icon,  widget: string }
+              - { label: "Label",             name: label, widget: string }

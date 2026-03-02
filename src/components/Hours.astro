@@ -1,7 +1,6 @@
 ---
-import content from '../data/content.json';
+import hours from '../data/hours.json';
 import site from '../data/site.json';
-const { hours } = content;
 ---
 
 <section class="hours" id="hours">
@@ -45,6 +44,7 @@ const { hours } = content;
               <div class="ratio ratio-16x9">
                 <iframe
                   src={site.mapsEmbed}
+                  title="Moments Café & Market pe Google Maps"
                   style="border:0; border-radius: 8px;"
                   allowfullscreen=""
                   loading="lazy"
