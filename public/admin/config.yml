@@ -8,8 +8,8 @@ local_backend: true
 media_folder: src/assets
 public_folder: /assets
 
-site_url: https://moments-cafe.netlify.app
-display_url: https://moments-cafe.netlify.app
+site_url: https://momentscafe.netlify.app
+display_url: https://momentscafe.netlify.app
 
 collections:
   # Site-wide settings (src/data/site.json)
