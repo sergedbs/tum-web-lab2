@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "href": "#about",    "icon": "fa-solid fa-circle-info", "label": "Despre Noi" },
+    { "href": "#services", "icon": "fa-solid fa-mug-hot",     "label": "Servicii"   },
+    { "href": "#hours",    "icon": "fa-solid fa-clock",       "label": "Program"    },
+    { "href": "#contact",  "icon": "fa-solid fa-phone",       "label": "Contact"    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Ce Oferim",
+  "items": [
+    {
+      "icon": "fa-solid fa-mug-hot",
+      "title": "Cafea Premium",
+      "description": "Trezește-te cu aroma unei cafele autentice! Cappuccino, espresso, latte pregătite de barista profesioniști. Cafea la drum nu înseamnă compromis de calitate."
+    },
+    {
+      "icon": "fa-solid fa-utensils",
+      "title": "Mâncare Proaspătă",
+      "description": "Uită de fast-food! Sandvișuri artizanale, salate fresh, feluri calde și deserturi preparate zilnic. Masa ta merită ingrediente de calitate, chiar și în drum."
+    },
+    {
+      "icon": "fa-solid fa-cart-shopping",
+      "title": "Market Complet",
+      "description": "Ai uitat ceva acasă? Nu-i problemă! Snacks, băuturi răcoritoare, produse de igienă și provizii pentru drum - totul într-un singur loc, fără timp pierdut."
+    }
+  ]
+}
