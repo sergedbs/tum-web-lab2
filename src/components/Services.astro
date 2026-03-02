@@ -1,7 +1,27 @@
 ---
+import content from '../data/content.json';
+const { services } = content;
 ---
 
 <section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title">{services.title}</h2>
+    <div class="row g-4 mt-2">
+      {services.items.map((item, i) => (
+        <div class="col-md-4">
+          <div
+            class="service-card h-100 animate-on-scroll"
+            style={i > 0 ? `transition-delay:${i * 0.1}s` : undefined}
+          >
+            <div class="service-icon"><i class={item.icon}></i></div>
+            <h3 class="service-title">{item.title}</h3>
+            <p class="service-description">{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
   <div class="container">
     <h2 class="section-title">Ce Oferim</h2>
     <div class="row g-4 mt-2">

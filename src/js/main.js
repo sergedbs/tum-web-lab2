@@ -10,11 +10,15 @@
 
 // Show open/closed status + closing time in the mobile call bar
 (function () {
+  var bar = document.getElementById('mobileCallBar');
+  if (!bar) return;
   var now = new Date();
   var day = now.getDay(); // 0=Sun, 1=Mon ... 6=Sat
   var hour = now.getHours() + now.getMinutes() / 60;
-  // Café: Mon-Thu 07-22, Fri-Sun 07-23
-  var closeHour = (day >= 1 && day <= 4) ? 22 : 23;
+  // Read close hours from data attributes (set by Astro from content.json)
+  var closeWeekday = parseInt(bar.dataset.closeWeekday ?? '22', 10);
+  var closeWeekend = parseInt(bar.dataset.closeWeekend ?? '23', 10);
+  var closeHour = (day >= 1 && day <= 4) ? closeWeekday : closeWeekend;
   var open = hour >= 7 && hour < closeHour;
   var el = document.getElementById('callBarStatus');
   el.innerHTML = open

@@ -1,20 +1,17 @@
 ---
+import content from '../data/content.json';
+const { about } = content;
 ---
 
 <section class="about" id="about">
   <div class="container">
-    <h2 class="section-title">De Ce Să Alegi Moments?</h2>
+    <h2 class="section-title">{about.title}</h2>
     <div class="about-content">
-      <p class="about-text">
-        <strong>Locația perfectă:</strong> La doar 10 minute de vamă, Moments este oaza ta de răgaz
-        pe drumul internațional E581. Fără devieri complicate - oprire directă, sigură și rapidă
-        pentru toți călătorii.
-      </p>
-      <p class="about-text">
-        <strong>Calitate garantată:</strong> Mâncare pregătită zilnic din ingrediente proaspete,
-        cafea premium de la barista profesioniști și un market cu tot ce-ți trebuie în călătorie.
-        Servire rapidă, prețuri corecte, atmosferă primitoare!
-      </p>
+      {about.paragraphs.map((p) => (
+        <p class="about-text">
+          <strong>{p.label}:</strong> {p.text}
+        </p>
+      ))}
     </div>
   </div>
 </section>

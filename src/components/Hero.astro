@@ -1,18 +1,17 @@
 ---
+import content from '../data/content.json';
+const { hero } = content;
 ---
 
 <section class="hero" id="hero">
   <div class="container">
     <div class="hero-content">
       <div class="hero-badge">
-        <i class="fa-solid fa-location-dot"></i> 10 minute de vama Leușeni
+        <i class="fa-solid fa-location-dot"></i> {hero.badge}
       </div>
-      <h2 class="hero-title">Oprirea Ta Perfectă pe E581</h2>
-      <p class="hero-subtitle">
-        Cafea proaspătă, mâncare artizanală și provizii de drum - la doar 10 minute de vama
-        Leușeni-Albița. Oprire rapidă, experiență memorabilă!
-      </p>
-      <a href="#hours" class="cta-button cta-hero">Planifică Vizita</a>
+      <h2 class="hero-title">{hero.title}</h2>
+      <p class="hero-subtitle">{hero.subtitle}</p>
+      <a href={hero.ctaHref} class="cta-button cta-hero">{hero.ctaLabel}</a>
     </div>
   </div>
 </section>

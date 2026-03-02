@@ -1,20 +1,26 @@
 ---
+import site from '../data/site.json';
+import content from '../data/content.json';
+import '../styles/reset.css';
+import '../styles/style.css';
+import logoUrl from '../assets/moments-logo.jpg';
+import coffeeUrl from '../assets/coffee.png';
+
 interface Props {
   title?: string;
   description?: string;
 }
 
 const {
-  title = "Moments Café & Market - Oprirea ta perfectă pe E581",
-  description = "Moments Café & Market - Mâncare artizanală, cafea proaspătă și market. La doar 10 minute de vama Leușeni-Albița pe E581.",
+  title = `${site.name} - ${content.hero.title}`,
+  description = site.description,
 } = Astro.props;
 
-import '../styles/reset.css';
-import '../styles/style.css';
-import logoUrl from '../assets/moments-logo.jpg';
-import coffeeUrl from '../assets/coffee.png';
+const { siteUrl, phone, phoneDisplay, instagram, facebook, year, mascotMessage, mapsEmbed } = site;
 
-const siteUrl = "https://sergedbs.github.io/tum-web-lab2/";
+// Pass close hours to main.js via data attributes (CMS-editable)
+const cafeWeekday = content.hours.cafe[0];
+const cafeWeekend = content.hours.cafe[1];
 ---
 
 <!doctype html>
@@ -28,7 +34,7 @@ const siteUrl = "https://sergedbs.github.io/tum-web-lab2/";
     <meta property="og:url" content={siteUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={`${siteUrl}assets/background.jpg`} />
+    <meta property="og:image" content={`${siteUrl}images/background.jpg`} />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{title}</title>
     <link rel="icon" type="image/jpeg" href={logoUrl.src} />
@@ -56,39 +62,20 @@ const siteUrl = "https://sergedbs.github.io/tum-web-lab2/";
       referrerpolicy="no-referrer"
     />
     <!-- JSON-LD structured data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "CafeOrCoffeeShop",
-        "name": "Moments Café & Market",
-        "description": "Mâncare artizanală, cafea proaspătă și market pe E581, la doar 10 minute de vama Leușeni-Albița.",
-        "url": "https://strdr4605.github.io/tum-web-lab2/",
-        "telephone": "+37369151500",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "E581",
-          "addressCountry": "MD"
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
-            "opens": "07:00",
-            "closes": "22:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Friday", "Saturday", "Sunday"],
-            "opens": "07:00",
-            "closes": "23:00"
-          }
-        ],
-        "sameAs": [
-          "https://www.instagram.com/moments.cafe.market/",
-          "https://www.facebook.com/moments.cafe.market/"
-        ]
-      }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      name: site.name,
+      description: site.description,
+      url: siteUrl,
+      telephone: phone,
+      address: { "@type": "PostalAddress", streetAddress: "E581", addressCountry: "MD" },
+      openingHoursSpecification: [
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday"], opens: "07:00", closes: `${cafeWeekday.closeHour}:00` },
+        { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday","Saturday","Sunday"],              opens: "07:00", closes: `${cafeWeekend.closeHour}:00` }
+      ],
+      sameAs: [instagram, facebook]
+    })} />
   </head>
   <body>
     <!-- Skip to main content (accessibility) -->
@@ -106,9 +93,7 @@ const siteUrl = "https://sergedbs.github.io/tum-web-lab2/";
 
     <!-- Mascot: Cico the coffee cup (Clippy-style) -->
     <div class="mascot" id="mascot" role="complementary" aria-label="Mascota Moments Café">
-      <div class="mascot__bubble">
-        Bună! Oprește-te la noi —<br />cafea proaspătă te așteaptă! ☕
-      </div>
+      <div class="mascot__bubble" set:html={mascotMessage.replace('—', '—<br />')}></div>
       <div class="mascot__body">
         <img
           src={coffeeUrl.src}
@@ -120,10 +105,15 @@ const siteUrl = "https://sergedbs.github.io/tum-web-lab2/";
     </div>
 
     <!-- Mobile-only sticky call bar -->
-    <div class="mobile-call-bar d-md-none" id="mobileCallBar">
+    <div
+      class="mobile-call-bar d-md-none"
+      id="mobileCallBar"
+      data-close-weekday={cafeWeekday.closeHour}
+      data-close-weekend={cafeWeekend.closeHour}
+    >
       <div class="mobile-call-bar__status" id="callBarStatus"></div>
-      <a href="tel:+37369151500" class="mobile-call-bar__btn">
-        <i class="fa-solid fa-phone"></i> 0691 51 500
+      <a href={`tel:${phone}`} class="mobile-call-bar__btn">
+        <i class="fa-solid fa-phone"></i> {phoneDisplay}
       </a>
     </div>
 
