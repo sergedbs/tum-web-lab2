@@ -1,22 +1,28 @@
 ---
+import content from '../data/content.json';
+import site from '../data/site.json';
+const { hours } = content;
 ---
 
 <section class="hours" id="hours">
   <div class="container">
-    <h2 class="section-title">Program & Locație</h2>
+    <h2 class="section-title">{hours.title}</h2>
     <div class="row g-4 mt-2">
       <div class="col-md-6">
         <div class="hours-box h-100 animate-on-scroll">
           <h3 class="hours-subtitle"><i class="fa-solid fa-mug-hot"></i> Cafenea</h3>
-          <p class="hours-time">Luni - Joi: 07:00 - 22:00</p>
-          <p class="hours-time">Vineri - Duminică: 07:00 - 23:00</p>
+          {hours.cafe.map((row) => (
+            <p class="hours-time">{row.days}: {row.time}</p>
+          ))}
         </div>
       </div>
 
       <div class="col-md-6">
         <div class="hours-box h-100 animate-on-scroll" style="transition-delay:0.1s">
           <h3 class="hours-subtitle"><i class="fa-solid fa-cart-shopping"></i> Market</h3>
-          <p class="hours-time">Zilnic: 07:00 - 22:00</p>
+          {hours.market.map((row) => (
+            <p class="hours-time">{row.days}: {row.time}</p>
+          ))}
         </div>
       </div>
 
@@ -25,19 +31,20 @@
           <div class="row g-4 align-items-center">
             <div class="col-md-6 location-info">
               <h3 class="hours-subtitle">
-                <i class="fa-solid fa-location-dot"></i> Locația Perfectă
+                <i class="fa-solid fa-location-dot"></i> {hours.location.title}
               </h3>
               <p class="location-text">
-                <strong>E581, la 10 minute de vama Leușeni - Albița</strong><br />
-                Acces facil, parcare sigură, fără deviere din drum. Oprire ideală înainte sau după
-                vamă!
+                <strong>{hours.location.addressStrong}</strong><br />
+                {hours.location.addressDetail}
               </p>
-              <a href="tel:+37369151500" class="cta-button secondary">Sună Acum: 0691 51 500</a>
+              <a href={`tel:${site.phone}`} class="cta-button secondary">
+                Sună Acum: {site.phoneDisplay}
+              </a>
             </div>
             <div class="col-md-6 map-container">
               <div class="ratio ratio-16x9">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2728.663067151469!2d28.208423936565193!3d46.85032229999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ca3b978f425f43%3A0xfeef728335faaa9e!2sMoments!5e0!3m2!1sen!2s!4v1770726154478!5m2!1sen!2s"
+                  src={site.mapsEmbed}
                   style="border:0; border-radius: 8px;"
                   allowfullscreen=""
                   loading="lazy"
