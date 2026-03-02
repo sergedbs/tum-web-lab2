@@ -127,5 +127,18 @@ const cafeWeekend = hours.cafe[1];
     <script>
       import '../js/main.js';
     </script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      const identity = (window as any).netlifyIdentity;
+      if (identity) {
+        identity.on('init', (user: any) => {
+          if (!user) {
+            identity.on('login', () => {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>

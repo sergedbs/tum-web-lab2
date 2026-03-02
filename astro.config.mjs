@@ -3,8 +3,8 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://sergedbs.github.io",
-  base: "/tum-web-lab2",
+  // Update site to your Netlify URL after first deploy (e.g. https://moments-cafe.netlify.app)
+  site: "https://moments-cafe.netlify.app",
   integrations: [sitemap()],
   output: "static",
 });
