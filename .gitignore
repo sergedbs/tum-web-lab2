@@ -1,6 +1,15 @@
-.DS_Store
+# Astro
+dist/
+.output/
+.astro/
+node_modules/
+
+# Editor
 .vscode
 .idea
+
+# Misc
+.DS_Store
 *.log
 *.tmp
 TODO.md
