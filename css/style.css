@@ -257,6 +257,12 @@ a:hover {
   transform: scale(1.05);
 }
 
+/* Restore container padding on navbar that reset.css zeroes out */
+.header .navbar.container {
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
 /* Navigation Styling */
 .navbar-toggler:focus {
   box-shadow: 0 0 0 2px var(--color-accent-light);
@@ -265,6 +271,13 @@ a:hover {
 /* Collapsed nav spacing on mobile */
 .navbar-collapse .nav-link {
   padding-left: var(--spacing-xs);
+}
+
+/* Desktop nav — more breathing room between items */
+@media screen and (min-width: 768px) {
+  .navbar-nav {
+    gap: var(--spacing-sm);
+  }
 }
 
 .nav-link {
@@ -316,9 +329,13 @@ a:hover {
   width: 80%;
 }
 
-/* ===================================
-   HERO SECTION
-   =================================== */
+/* Scroll offset so sticky navbar doesn't cover section headings */
+.about,
+.services,
+.hours,
+.footer {
+  scroll-margin-top: 80px;
+}
 .hero {
   background: linear-gradient(135deg, rgba(111, 78, 55, 0.85) 0%, rgba(111, 78, 55, 0.75) 50%, rgba(139, 98, 69, 0.7) 100%), 
               url('../images/background.jpg');
@@ -802,10 +819,10 @@ a:hover {
   transform: scale(1.03);
 }
 
-/* Push page content up so the bar doesn't cover the footer on mobile */
+/* Push footer content up so the fixed bar doesn't cover it on mobile */
 @media screen and (max-width: 767px) {
-  body {
-    padding-bottom: 68px;
+  .footer {
+    padding-bottom: calc(var(--spacing-lg) + 68px);
   }
 }
 
@@ -1016,7 +1033,7 @@ a:hover {
   bottom: 28px;
   right: 28px;
   z-index: 9999;
-  width: 110px;
+  width: 83px;
   cursor: pointer;
   animation: mascotEntrance 1s ease 3s both;
   transition: transform 0.25s ease;
@@ -1083,7 +1100,7 @@ a:hover {
 /* Sit above the sticky call bar on mobile */
 @media screen and (max-width: 767px) {
   .mascot {
-    width: 78px;
+    width: 59px;
     bottom: 82px;
     right: 10px;
   }
