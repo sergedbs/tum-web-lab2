@@ -974,7 +974,102 @@ a:hover {
   }
 }
 
-/* Print styles (bonus - makes the page print-friendly) */
+/* ===================================
+   MASCOT
+   =================================== */
+@keyframes mascotEntrance {
+  0%   { opacity: 0; transform: translateX(160px); }
+  60%  { opacity: 1; transform: translateX(-14px); }
+  80%  { transform: translateX(7px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes mascotFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%       { transform: translateY(-10px) rotate(1.5deg); }
+}
+
+.mascot {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  width: 110px;
+  cursor: pointer;
+  animation: mascotEntrance 1s ease 3s both;
+  transition: transform 0.25s ease;
+  transform-origin: bottom center;
+}
+
+.mascot:hover {
+  transform: rotate(-5deg) scale(1.08);
+}
+
+/* Float lives on the inner body so it doesn't conflict with hover tilt */
+.mascot__body {
+  animation: mascotFloat 2.8s ease-in-out 4s infinite;
+}
+
+.mascot:hover .mascot__body {
+  animation-play-state: paused;
+}
+
+.mascot__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+}
+
+/* Speech bubble */
+.mascot__bubble {
+  position: absolute;
+  bottom: 108%;
+  right: 0;
+  background-color: var(--color-secondary-light);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0.65rem 0.9rem;
+  border-radius: 14px 14px 2px 14px;
+  border: 2px solid var(--color-accent-light);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px) scale(0.95);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Tail of the speech bubble pointing bottom-right */
+.mascot__bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  right: 16px;
+  border: 5px solid transparent;
+  border-top-color: var(--color-accent-light);
+}
+
+.mascot:hover .mascot__bubble {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Sit above the sticky call bar on mobile */
+@media screen and (max-width: 767px) {
+  .mascot {
+    width: 78px;
+    bottom: 82px;
+    right: 10px;
+  }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
 @media print {
   .header {
     position: static;
