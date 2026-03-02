@@ -236,10 +236,13 @@ a:hover {
 }
 
 /* Navigation Styling */
-.nav {
-  display: flex;
-  gap: var(--spacing-md);
-  align-items: center;
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px var(--color-accent-light);
+}
+
+/* Collapsed nav spacing on mobile */
+.navbar-collapse .nav-link {
+  padding-left: var(--spacing-xs);
 }
 
 .nav-link {
@@ -344,7 +347,14 @@ a:hover {
   margin-right: auto;
 }
 
-/* CTA Button */
+/* Hero CTA — full-width on small screens */
+@media screen and (max-width: 480px) {
+  .cta-hero {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 .cta-button {
   display: inline-block;
   background-color: var(--color-accent);
@@ -740,16 +750,11 @@ a:hover {
     font-size: var(--font-size-large);
   }
   
-  /* Navigation - stack vertically on very small screens */
-  .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--spacing-xs);
-  }
-  
+  /* Navigation - ensure correct color on mobile */
   .nav-link {
     font-size: var(--font-size-small);
     padding: var(--spacing-xs);
+    justify-content: flex-start;
   }
   
   /* Hero section */
@@ -790,10 +795,6 @@ a:hover {
   }
   
   /* Header - keep horizontal but compact */
-  .nav {
-    gap: var(--spacing-sm);
-  }
-  
   .nav-link {
     font-size: var(--font-size-small);
   }
