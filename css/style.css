@@ -29,8 +29,8 @@
   --color-bg-dark: #E8D5C0;
   
   /* Typography */
-  --font-family-heading: 'Georgia', 'Times New Roman', serif;
-  --font-family-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-family-heading: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  --font-family-body: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   
   /* Font Sizes */
   --font-size-base: 16px;
@@ -360,6 +360,29 @@ a:hover {
   margin: 0 auto;
   padding: var(--spacing-xl);
   animation: fadeInUp 1s ease-out;
+}
+
+/* Hero location badge pill */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--color-text-white);
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--border-radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: var(--spacing-md);
+  animation: fadeIn 1.2s ease-out 0.3s both;
+}
+
+.hero-badge i {
+  color: var(--color-accent-light);
 }
 
 /* Hero Title */
@@ -1104,6 +1127,77 @@ a:hover {
     bottom: 82px;
     right: 10px;
   }
+}
+
+/* ===================================
+   SCROLL-TRIGGERED ANIMATIONS
+   =================================== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================
+   BACK TO TOP BUTTON (desktop only)
+   =================================== */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 9990;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-text-white);
+  border: 2px solid var(--color-accent-light);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--color-accent);
+  color: var(--color-text-white);
+}
+
+/* Hide on mobile — the fixed call bar already takes the bottom edge */
+@media screen and (max-width: 767px) {
+  .back-to-top {
+    display: none;
+  }
+}
+
+/* ===================================
+   SKIP LINK (accessibility)
+   =================================== */
+.skip-link {
+  background-color: var(--color-primary);
+  color: var(--color-text-white);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+  font-weight: 600;
+  font-size: var(--font-size-medium);
+  z-index: 99999;
 }
 
 /* ===================================
