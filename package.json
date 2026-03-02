@@ -1,0 +1,28 @@
+{
+  "name": "tum-web-lab2",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.18.0"
+  },
+  "description": "A professional, mobile-first landing page for **Moments Café & Market**, a real business located 10 minutes from the E581 Leușeni-Albița border crossing. Built to attract international road travelers with artisanal food, premium coffee, and a full-service market.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergedbs/tum-web-lab2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergedbs/tum-web-lab2/issues"
+  },
+  "homepage": "https://github.com/sergedbs/tum-web-lab2#readme"
+}
