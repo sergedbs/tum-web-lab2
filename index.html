@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Mobile scroll progress bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- Header & Navigation -->
     <header class="header">
       <nav class="navbar navbar-expand-md navbar-dark container py-2">
@@ -181,7 +184,7 @@
         Bună! Oprește-te la noi —<br>cafea proaspătă te așteaptă! ☕
       </div>
       <div class="mascot__body">
-        <img src="images/coffee.svg" class="mascot__svg" alt="" aria-hidden="true">
+        <img src="images/coffee.png" class="mascot__svg" alt="" aria-hidden="true">
       </div>
     </div>
 
@@ -195,6 +198,16 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script>
+      // Mobile scroll progress bar
+      (function () {
+        var bar = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', function () {
+          var scrolled = window.scrollY;
+          var total = document.documentElement.scrollHeight - window.innerHeight;
+          bar.style.width = total > 0 ? (scrolled / total * 100) + '%' : '0%';
+        }, { passive: true });
+      })();
+
       // Show open/closed status in the mobile call bar
       (function () {
         var now = new Date();
