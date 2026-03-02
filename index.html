@@ -19,17 +19,17 @@
     <header class="header">
       <nav class="navbar navbar-expand-md navbar-dark container py-2">
         <h1 class="logo navbar-brand mb-0">
-          <a href="#hero"><img src="images/moments-logo.jpg" alt="Moments Café & Market Logo" style="height: 60px; width: 60px; border-radius: 50%; object-fit: cover;"></a>
+          <a href="#"><img src="images/moments-logo.jpg" alt="Moments Café & Market Logo" style="height: 60px; width: 60px; border-radius: 50%; object-fit: cover;"></a>
         </h1>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Deschide meniul">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="mainNav">
           <nav class="navbar-nav ms-auto">
-            <a href="#about" class="nav-link">Despre Noi</a>
-            <a href="#services" class="nav-link">Servicii</a>
-            <a href="#hours" class="nav-link">Program</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#about" class="nav-link"><i class="fa-solid fa-circle-info me-1"></i>Despre Noi</a>
+            <a href="#services" class="nav-link"><i class="fa-solid fa-mug-hot me-1"></i>Servicii</a>
+            <a href="#hours" class="nav-link"><i class="fa-solid fa-clock me-1"></i>Program</a>
+            <a href="#contact" class="nav-link"><i class="fa-solid fa-phone me-1"></i>Contact</a>
           </nav>
         </div>
       </nav>
@@ -70,7 +70,7 @@
         <div class="row g-4 mt-2">
           <!-- Service Card 1: Café -->
           <div class="col-md-4">
-            <div class="service-card">
+            <div class="service-card h-100">
               <div class="service-icon"><i class="fa-solid fa-mug-hot"></i></div>
               <h3 class="service-title">Cafea Premium</h3>
               <p class="service-description">
@@ -82,7 +82,7 @@
           
           <!-- Service Card 2: Artisanal Food -->
           <div class="col-md-4">
-            <div class="service-card">
+            <div class="service-card h-100">
               <div class="service-icon"><i class="fa-solid fa-utensils"></i></div>
               <h3 class="service-title">Mâncare Proaspătă</h3>
               <p class="service-description">
@@ -94,7 +94,7 @@
           
           <!-- Service Card 3: Market -->
           <div class="col-md-4">
-            <div class="service-card">
+            <div class="service-card h-100">
               <div class="service-icon"><i class="fa-solid fa-cart-shopping"></i></div>
               <h3 class="service-title">Market Complet</h3>
               <p class="service-description">
@@ -113,7 +113,7 @@
         <h2 class="section-title">Program & Locație</h2>
         <div class="row g-4 mt-2">
           <div class="col-md-6">
-            <div class="hours-box">
+            <div class="hours-box h-100">
               <h3 class="hours-subtitle"><i class="fa-solid fa-mug-hot"></i> Cafenea</h3>
               <p class="hours-time">Luni - Joi: 07:00 - 22:00</p>
               <p class="hours-time">Vineri - Duminică: 07:00 - 23:00</p>
@@ -121,7 +121,7 @@
           </div>
           
           <div class="col-md-6">
-            <div class="hours-box">
+            <div class="hours-box h-100">
               <h3 class="hours-subtitle"><i class="fa-solid fa-cart-shopping"></i> Market</h3>
               <p class="hours-time">Zilnic: 07:00 - 22:00</p>
             </div>
@@ -217,7 +217,9 @@
         var close = (day >= 1 && day <= 4) ? 22 : 23;
         var open = hour >= 7 && hour < close;
         var el = document.getElementById('callBarStatus');
-        el.textContent = open ? '🟢 Deschis acum' : '🔴 Închis acum';
+        el.innerHTML = open
+          ? '<i class="fa-solid fa-circle" style="color:#4ade80;font-size:0.6rem;vertical-align:middle"></i> Deschis acum'
+          : '<i class="fa-solid fa-circle" style="color:#f87171;font-size:0.6rem;vertical-align:middle"></i> Închis acum';
         el.className = 'mobile-call-bar__status mobile-call-bar__status--' + (open ? 'open' : 'closed');
       })();
     </script>
