@@ -1,16 +1,15 @@
 backend:
-  name: github
-  repo: sergedbs/tum-web-lab2
+  name: git-gateway
   branch: master
 
 # Enables the local proxy server for development (npx decap-server)
 local_backend: true
 
 media_folder: src/assets
-public_folder: /tum-web-lab2/assets
+public_folder: /assets
 
-site_url: https://sergedbs.github.io/tum-web-lab2
-display_url: https://sergedbs.github.io/tum-web-lab2
+site_url: https://moments-cafe.netlify.app
+display_url: https://moments-cafe.netlify.app
 
 collections:
   # Site-wide settings (src/data/site.json)
