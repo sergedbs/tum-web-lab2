@@ -1,11 +1,30 @@
 {
   "title": "Program & Locație",
   "cafe": [
-    { "days": "Luni - Joi", "time": "07:00 - 22:00", "closeHour": 22, "weekdayRange": [1, 4] },
-    { "days": "Vineri - Duminică", "time": "07:00 - 23:00", "closeHour": 23, "weekdayRange": [5, 0] }
+    {
+      "days": "Luni - Joi",
+      "time": "07:00 - 22:00",
+      "closeHour": 22,
+      "weekdayRange": [
+        1,
+        4
+      ]
+    },
+    {
+      "days": "Vineri - Duminică",
+      "time": "07:00 - 23:00",
+      "closeHour": 23,
+      "weekdayRange": [
+        5,
+        0
+      ]
+    }
   ],
   "market": [
-    { "days": "Zilnic", "time": "07:00 - 22:00" }
+    {
+      "days": "Zilnic",
+      "time": "07:00 - 23:00"
+    }
   ],
   "location": {
     "title": "Locația Perfectă",
